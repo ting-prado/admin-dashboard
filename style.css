@@ -33,7 +33,7 @@
 .bot {
   display: grid;
   padding: 20px;
-  grid-gap: 15px;
+  grid-gap: 8px;
   font-family: 'Merriweather Sans', Arial, Helvetica, sans-serif;
   font-weight: bold;
   color: white;
@@ -63,6 +63,15 @@
   align-items: center;
   grid-gap: 20px;
   color: inherit;
+  padding: 2px;
+}
+
+.top a:hover,
+.top a:focus,
+.bot a:hover,
+.bot a:focus {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
 }
 
 .header {
