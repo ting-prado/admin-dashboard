@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -11,21 +13,56 @@
   grid-template-rows: 120px 4fr;
 }
 
-.items,
-.announcements,
-.trending {
-  font-size: 25px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+.items {
   padding: 5px;
 }
 
 .sidebar {
-  background: lightseagreen;
+  background: rgb(5, 143, 197);
   grid-area: 1 / 1 / 3 / 2;
   height: 100vh;
   position: sticky;
   top: 0;
   overflow-x: hidden;
+  display: grid;
+  grid-template-rows: 1fr repeat(2, 3fr) 2fr;
+}
+
+.dashboard,
+.top,
+.bot {
+  display: grid;
+  padding: 20px;
+  grid-gap: 15px;
+  font-family: 'Merriweather Sans', Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: white;
+  align-content: start;
+  align-items: center;
+}
+
+.dashboard {
+  grid-template-columns: auto 1fr;
+  padding: 10px;
+  font-size: 24px;
+  user-select: none;
+}
+
+.dashboard img,
+.top img,
+.bot img {
+  filter: invert(100);
+}
+
+.top a,
+.bot a {
+  text-decoration: none;
+  font-size: 16px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  grid-gap: 20px;
+  color: inherit;
 }
 
 .header {
@@ -34,7 +71,7 @@
 }
 
 .main {
-  background: rgb(185, 185, 66);
+  background: whitesmoke;
   grid-area: 2 / 2 / 3 / 3;
   display: grid;
   grid-template-columns: 3fr 1fr;
