@@ -10,7 +10,9 @@
   min-height: 100%;
   display: grid;
   grid-template-columns: minmax(200px, 1fr) 4fr;
-  grid-template-rows: 120px 4fr;
+  grid-template-rows: 145px 4fr;
+  --bg-color: rgb(231, 231, 231);
+  --sidebar-color: rgb(5, 143, 197);
 }
 
 .items {
@@ -18,7 +20,7 @@
 }
 
 .sidebar {
-  background: rgb(5, 143, 197);
+  background: var(--sidebar-color);
   grid-area: 1 / 1 / 3 / 2;
   height: 100vh;
   position: sticky;
@@ -78,17 +80,32 @@
   background: white;
   grid-area: 1 / 2 / 2 / 3;
   display: grid;
-  grid-template-rows: 1fr 2fr;
-  border: 2px solid green;
+  grid-template-rows: 1fr 2.5fr;
+  grid-gap: 5px;
+  position: relative;
+  height: 140px;
+}
+
+.header::after {
+
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  box-shadow: 0 5px 5px silver;
 }
 
 .headertop,
 .headerbot {
-  border: 1px solid yellow;
   display: grid;
-  grid-template-columns: 3.5fr minmax(170px, 2fr);
-  grid-gap: min(100px, 5%);
+  grid-template-columns: 3fr minmax(220px, 2fr);
+  grid-gap: 20px;
   padding: 5px;
+  font-family: 'Merriweather Sans', Arial, Helvetica, sans-serif;
+  font-weight: bold;
 }
 
 .left,
@@ -98,20 +115,66 @@
 }
 
 .left {
+  margin-left: 2rem;
   grid-column: 1 / 2;
+  gap: 18px;
 }
 
 .right {
   grid-column: 2 / 3;
   justify-content: center;
-  gap: clamp(5px, 30px, 10%);
+  gap: clamp(5px, 20px, 12%);
+  font-size: 16px;
+}
+
+.headerbot > .right {
+  justify-content: start;
+  gap: max(5px, 6%);
+}
+
+.headerbot button {
+  width: 85px;
+  height: 35px;
+  color: white;
+  background: var(--sidebar-color);
+  border: 1px solid var(--sidebar-color);
+  border-radius: 25px;
+  min-width: 60px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: inherit;
 }
 
 .searchbar {
-  min-width: 150px;
+  min-width: 250px;
   border: 1px solid black;
+  background: var(--bg-color);
+  border-radius: 10px;
   height: 25px;
   flex: 1;
+  border: none;
+  padding: 1px 5px;
+}
+
+.headerbot img {
+  width: 63px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.headerbot > .left > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.headerbot > .left > div > p:nth-child(1) {
+  font-size: 12px;
+}
+
+.headerbot > .left > div > p:nth-child(2) {
+  font-size: 22px;
 }
 
 .icon {
@@ -121,12 +184,12 @@
 
 .smallAvi {
   border-radius: 50%;
-  width: 40px;
+  width: 43px;
   height: 40px;
 }
 
 .main {
-  background:silver;
+  background: var(--bg-color);
   grid-area: 2 / 2 / 3 / 3;
   display: grid;
   grid-template-columns: 3fr 1fr;
