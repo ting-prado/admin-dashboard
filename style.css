@@ -13,6 +13,7 @@
   grid-template-rows: 145px 4fr;
   --bg-color: rgb(231, 231, 231);
   --sidebar-color: rgb(5, 143, 197);
+  font-family: 'Merriweather Sans', Arial, Helvetica, sans-serif;
 }
 
 .items {
@@ -36,7 +37,6 @@
   display: grid;
   padding: 20px;
   grid-gap: 8px;
-  font-family: 'Merriweather Sans', Arial, Helvetica, sans-serif;
   font-weight: bold;
   color: white;
   align-content: start;
@@ -80,21 +80,9 @@
   background: white;
   grid-area: 1 / 2 / 2 / 3;
   display: grid;
-  grid-template-rows: 1fr 2.5fr;
   grid-gap: 5px;
-  position: relative;
   height: 140px;
-}
-
-.header::after {
-
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+  grid-template-rows: 1fr 2.5fr;
   box-shadow: 0 5px 5px silver;
 }
 
@@ -104,7 +92,6 @@
   grid-template-columns: 3fr minmax(220px, 2fr);
   grid-gap: 20px;
   padding: 5px;
-  font-family: 'Merriweather Sans', Arial, Helvetica, sans-serif;
   font-weight: bold;
 }
 
@@ -132,6 +119,10 @@
   gap: max(5px, 6%);
 }
 
+.headertop > .right p {
+  user-select: none;
+}
+
 .headerbot button {
   width: 85px;
   height: 35px;
@@ -140,7 +131,6 @@
   border: 1px solid var(--sidebar-color);
   border-radius: 25px;
   min-width: 60px;
-  cursor: pointer;
   font-family: inherit;
   font-size: 13px;
   font-weight: inherit;
@@ -182,6 +172,12 @@
   height: 24px;
 }
 
+.smallAvi, 
+.icon,
+button {
+  cursor: pointer;
+}
+
 .smallAvi {
   border-radius: 50%;
   width: 43px;
@@ -197,8 +193,65 @@
   grid-gap: 15px;
 }
 
-.projects {
+.main h3 {
+  font-weight: bold;
+}
+
+.card {
+  height: 150px;
+  position: relative;
   background: white;
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.card > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.card p {
+  font-size: 13px;
+  color: gray;
+}
+
+.cardIcons {
+  align-self: flex-end;
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 30px;
+  justify-items: end;
+}
+
+.card > span {
+  height: 100%;
+  width: 25px;
+  background: orange;
+}
+
+.link {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.projects {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-column-gap: 20px;
+  grid-row-gap: 10px;
+}
+
+h3 {
+  grid-column: 1 / -1;
 }
 
 .sideContents {
