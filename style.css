@@ -12,7 +12,8 @@
   grid-template-columns: minmax(200px, 1fr) 4fr;
   grid-template-rows: 145px 4fr;
   --bg-color: rgb(231, 231, 231);
-  --sidebar-color: rgb(5, 143, 197);
+  --sidebar-color: #dd7373;
+  --items-color: white;
   font-family: 'Merriweather Sans', Arial, Helvetica, sans-serif;
 }
 
@@ -78,7 +79,7 @@
 }
 
 .header {
-  background: white;
+  background: var(--items-color);
   grid-area: 1 / 2 / 2 / 3;
   display: grid;
   grid-gap: 5px;
@@ -175,7 +176,8 @@
 
 .smallAvi, 
 .icon,
-button {
+button,
+.trending > div > div > span {
   cursor: pointer;
 }
 
@@ -201,7 +203,7 @@ button {
 .card {
   height: 180px;
   position: relative;
-  background: white;
+  background: var(--items-color);
   display: flex;
   border-radius: 10px;
   overflow: hidden;
@@ -235,7 +237,7 @@ button {
 .card > span {
   height: 100%;
   width: 25px;
-  background: orange;
+  background: #ead94c;
 }
 
 .link {
@@ -269,15 +271,17 @@ button {
   height: 100vh;
 }
 
-.announcements {
+.announcements,
+.trending {
   display: grid;
   grid-template-rows: 16px;
   grid-row-gap: 10px;
 }
 
-.announcements > div {
+.announcements > div,
+.trending > div {
   padding: 20px;
-  background: white;
+  background: var(--items-color);
   display: grid;
   grid-template-columns: minmax(150px, 1fr);
   border-radius: 10px;
@@ -290,6 +294,7 @@ hr {
 .announcements h4,
 .announcements p {
   font-size: 13px;
+  margin: 3px;
 }
 
 .announcements p {
@@ -301,6 +306,18 @@ hr {
   color: gray;
 }
 
-.trending {
-  background: white;
+.trending > div > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.trending > div > div > span > p:nth-child(1) {
+  font-size: 14px;
+}
+
+.trending > div > div > span > p:nth-child(2) {
+  color: gray;
+  font-size: 13px;
+  margin-top: 5px;
 }
