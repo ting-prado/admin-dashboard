@@ -1,7 +1,7 @@
 # Admin Dashboard
 
 ## Introduction
-This project is to made after the grid lessons and plenty of practice. This admin dashboard is layout where the previous projects are listed and are linked in cards.
+This project is to made after the grid lessons and plenty of practice. This admin dashboard is a layout where the previous projects are listed and are linked in cards.
 
 ## Goals and Objectives
 
